@@ -244,21 +244,6 @@ if (preview_metal && render_bolts){
 
 // 2d shapes for laser-cutting:
 
-RAMPS_width=0;//TODO
-RAMPS_height=0;//TODO
-module RAMPS_holes(){
-  circle(r=m3_diameter/2, $fn=20);
-
-  translate([0,RAMPS_height])
-  circle(r=m3_diameter/2, $fn=20);
-
-  translate([RAMPS_width, 0])
-  circle(r=m3_diameter/2, $fn=20);
-
-  translate([RAMPS_width, RAMPS_height])
-  circle(r=m3_diameter/2, $fn=20);
-}
-
 Sanguinololu_width=43;
 Sanguinololu_height=94;
 module Sanguinololu_holes(){
@@ -398,9 +383,6 @@ module holes_for_motor_wires(){
 module MachineLeftPanel_face(){
   difference(){
     MachineSidePanel_face();
-
-//    translate([0,0])
-//    RAMPS_holes();
 
     translate([45, 220])
     Sanguinololu_holes();
