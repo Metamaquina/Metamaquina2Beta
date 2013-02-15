@@ -8,6 +8,7 @@
 
 //2d shape (good for the lasercutter)
 module beltclamp_curves(width, r){
+  m4_diameter = 4;
   d = width/2-r;
 
   difference(){
@@ -18,9 +19,11 @@ module beltclamp_curves(width, r){
       }
     }
 
+    //These are holes for M3 bolts, but we want
+    // some clearance so they'll have 4mm diameter.
     for (x=[-d,d]){
       translate([x, 0])
-      circle(r=m3_diameter/2, $fn=20);
+      circle(r=m4_diameter/2, $fn=20);
     }
   }
 }
