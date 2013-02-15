@@ -2194,7 +2194,7 @@ module YPlatform_sheet_curves(){
 
     //Metamaquina logo
     translate([-170/2,-110 - 25])
-      import(file="/home/juca/devel/METAMAQUINA/Desenvolvimento/Metamaquina3D/Acrilico/metamaquina-170mm_X_25mm.dxf");
+      import(file="metamaquina-170mm_X_25mm.dxf");
 
     //corner holes
     for (i=[-1,1]){
