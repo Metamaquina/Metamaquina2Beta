@@ -1,7 +1,8 @@
 // t-slot helper modules
 //
 // (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
-// Licensed under the General Public License version 2 (or later)
+// Lincensed under the terms of the GNU General Public License
+// version 3 (or later).
 
 m3_diameter=3;
 module t_slot_holes(width, thickness, joint_size=5){

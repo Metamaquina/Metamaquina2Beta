@@ -1,7 +1,8 @@
 // 608zz bearing
 //
 // (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
-// Licensed under the General Public License version 2 (or later)
+// Lincensed under the terms of the GNU General Public License
+// version 3 (or later).
 
 module 608zz_bearing(details=false){
   if(details){

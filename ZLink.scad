@@ -3,10 +3,9 @@
 // These are the plastic parts that link the XPlatform to the 
 // Z-axis threaded bars.
 //
-// (c) 2013 Metamáquina <http://www.metamaquina.com.br> 
-// Author: Felipe Corrêa da Silva Sanches <fsanches@metamaquina.com.br>
+// (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
 // Lincensed under the terms of the GNU General Public License
-// version 3 or later.
+// version 3 (or later).
 
 //TODO: better names for these parameters
 module z_threaded_bar_link (

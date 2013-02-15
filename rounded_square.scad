@@ -1,7 +1,8 @@
 // helper module for drawing rectangles with rounded borders
 //
 // (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
-// Licensed under the General Public License version 2 (or later)
+// Lincensed under the terms of the GNU General Public License
+// version 3 (or later).
 
 module rounded_square(dim, corners=[10,10,10,10], center=false){
   w=dim[0];

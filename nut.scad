@@ -1,7 +1,6 @@
-// (c) 2012 Metamáquina <http://www.metamaquina.com.br> 
-// Author: Felipe Corrêa da Silva Sanches <fsanches@metamaquina.com.br>
+// (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
 // Lincensed under the terms of the GNU General Public License
-// version 3 or later.
+// version 3 (or later).
 
 module M8_nut(){
   nut(r=4, R = 7, H = 6);

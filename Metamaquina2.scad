@@ -1,7 +1,6 @@
-// (c) 2013 Metamáquina <http://www.metamaquina.com.br> 
-// Author: Felipe Corrêa da Silva Sanches <fsanches@metamaquina.com.br>
+// (c) 2013 Felipe C. da S. Sanches <fsanches@metamaquina.com.br>
 // Lincensed under the terms of the GNU General Public License
-// version 3 or later.
+// version 3 (or later).
 
 /*Thickness of acrylic or plywood sheets to use. Be sure to use a value slightly larger than the nominal material thickness in order to be tolerant to variations on the material's actual thickness*/
 thickness = 6 + 0.5; //6mm thick sheets
