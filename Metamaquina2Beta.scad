@@ -2942,8 +2942,6 @@ module extruder(){
 }
 
 module extruder_model(){
-  include <printrbot/printrbot_extruder.scad>;
-
   rotate([90, 0, 0])
   translate([3,36.6,thickness*2.5])
   rotate([0, 0, 3]){
