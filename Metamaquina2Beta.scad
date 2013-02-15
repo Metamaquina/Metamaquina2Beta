@@ -286,10 +286,6 @@ module HiquaPowerSupply(){
   }
 }
 
-module wiring_holes(){
-
-}
-
 module RodEndTop_face(){
   RodEnd_face(z_rod_z_bar_distance+12);
 }
