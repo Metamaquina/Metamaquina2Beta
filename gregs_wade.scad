@@ -500,8 +500,6 @@ module block_holes(legacy_mount=false, layer_thickness=0.25){
 			}
 
 		}
-%		translate([0,0,-8])
-		import("wade-small.stl");
 	}
 
 	// Idler mounting holes and nut traps.
