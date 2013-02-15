@@ -2204,6 +2204,14 @@ module YPlatform_sheet_curves(){
       }
     }
 
+    //holes for the heated bed wiring
+    for (i=[-1,1]){
+      for (j=[-1,1]){
+        translate([-95+i*5, j*5])
+        circle(r=m3_diameter/2, $fn=20);
+      }
+    }
+
     translate([Y_rods_distance/2, 0])
       ybushing_holes();
 
