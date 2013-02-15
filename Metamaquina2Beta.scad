@@ -2150,12 +2150,16 @@ module BuildVolumePreview(){
   }
 }
 
+module YLinearBearings(){
+  //TODO: implement-me!
+}
+
 module YPlatform(){
   translate([0, YCarPosition, 0]){
     //#BuildVolumePreview();
     BuildPlatform_pcb();
     YPlatform_sheet();
-    YBushings();
+    YLinearBearings();
   }
   YRods();
   Y_belt();
