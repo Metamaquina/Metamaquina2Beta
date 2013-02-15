@@ -26,7 +26,7 @@ m8_nut_height = 6.3; //TODO: check the datasheets
 m8_washer_height = 1.5; //TODO: check the datasheets
 
 //platic parts
-use <y-bushing.scad>;
+use <lm8uu-holder.scad>;
 use <belt-clamp.scad>;
 use <bar-clamp.scad>;
 use <coupling.scad>;
@@ -150,14 +150,14 @@ Y_rod_length = RightPanel_basewidth - 2*(bar_cut_length + m8_diameter/2) + 24;
 Y_rod_height = base_bars_Zdistance + base_bars_height + 10.2;//TODO
 BottomPanel_width=60;
 Z_rod_sidepanel_distance = (Z_rods_distance - SidePanels_distance)/2 + thickness;
-y_bushing_rod_height = 14;
+lm8uu_holder_rod_height = 14;
 
-YPlatform_height = Y_rod_height + y_bushing_rod_height;
+YPlatform_height = Y_rod_height + lm8uu_holder_rod_height;
 pcb_height = YPlatform_height + 10;
 BuildPlatform_height = pcb_height+2;
 
 //machine_x_dim is the actual width of the whole machine
-machine_x_dim = Z_rods_distance+2*(y_bushing_rod_height+thickness);
+machine_x_dim = Z_rods_distance+2*(lm8uu_holder_rod_height+thickness);
 XPlatform_height = 45;
 
 //ZLink-specific parameters:
@@ -165,9 +165,9 @@ ZLink_rod_height = 11*sqrt(3)/2;
 dx_z_threaded = 14;
 Zlink_hole_height = thickness + (XPlatform_height-thickness)/2;
 
-lm8uu_hole_offset = y_bushing_rod_height + 1;
+lm8uu_hole_offset = lm8uu_holder_rod_height + 1;
 XEnd_extra_width = 30;
-XEnd_box_size = y_bushing_rod_height + z_rod_z_bar_distance + ZLink_rod_height;
+XEnd_box_size = lm8uu_holder_rod_height + z_rod_z_bar_distance + ZLink_rod_height;
 
 X_rod_length = machine_x_dim - 2*thickness;
 X_rod_height = 10;
@@ -1685,10 +1685,10 @@ module XEndIdler_belt_face_assembly(){
 module Z_couplings(){
   if (preview_ABS){
     color(ABS_color){
-      translate([-machine_x_dim/2 + thickness + y_bushing_rod_height + z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
+      translate([-machine_x_dim/2 + thickness + lm8uu_holder_rod_height + z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
       coupling_pair();
 
-      translate([machine_x_dim/2 - thickness - y_bushing_rod_height - z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
+      translate([machine_x_dim/2 - thickness - lm8uu_holder_rod_height - z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
       coupling_pair();
     }
   }
@@ -1713,12 +1713,12 @@ module XEndIdler_lm8uu_holders(){
       translate([-thickness, 0, 0])
       rotate([0, 0, -90])
       rotate([90, 0, 0])
-      ybushing();
+      lm8uu_holder();
 
       translate([-thickness, 0, XPlatform_height])
       rotate([0, 0, -90])
       rotate([90, 0, 0])
-      ybushing();
+      lm8uu_holder();
     }
   }
 }
@@ -1729,12 +1729,12 @@ module XEndMotor_lm8uu_holders(){
       translate([thickness, 0, 0])
       rotate([0, 0, 90])
       rotate([90, 0, 0])
-      ybushing();
+      lm8uu_holder();
 
       translate([thickness, 0, XPlatform_height])
       rotate([0, 0, 90])
       rotate([90, 0, 0])
-      ybushing();
+      lm8uu_holder();
     }
   }
 }
@@ -1742,25 +1742,25 @@ module XEndMotor_lm8uu_holders(){
 module XCarriage_lm8uu_holders(){
   if( preview_ABS ){
     color(ABS_color){
-      translate([XCarPosition - XCarriage_lm8uu_distance/2, X_rods_distance/2, thickness + y_bushing_rod_height + X_rod_height])
+      translate([XCarPosition - XCarriage_lm8uu_distance/2, X_rods_distance/2, thickness + lm8uu_holder_rod_height + X_rod_height])
       rotate([180,0,0])
       rotate([0,0,90])
-      ybushing();
+      lm8uu_holder();
 
-      translate([XCarPosition - XCarriage_lm8uu_distance/2, -X_rods_distance/2, thickness + y_bushing_rod_height + X_rod_height])
+      translate([XCarPosition - XCarriage_lm8uu_distance/2, -X_rods_distance/2, thickness + lm8uu_holder_rod_height + X_rod_height])
       rotate([180,0,0])
       rotate([0,0,90])
-      ybushing();
+      lm8uu_holder();
 
-      translate([XCarPosition + XCarriage_lm8uu_distance/2, X_rods_distance/2, thickness + y_bushing_rod_height + X_rod_height])
+      translate([XCarPosition + XCarriage_lm8uu_distance/2, X_rods_distance/2, thickness + lm8uu_holder_rod_height + X_rod_height])
       rotate([180,0,0])
       rotate([0,0,90])
-      ybushing();
+      lm8uu_holder();
 
-      translate([XCarPosition + XCarriage_lm8uu_distance/2, -X_rods_distance/2, thickness + y_bushing_rod_height + X_rod_height])
+      translate([XCarPosition + XCarriage_lm8uu_distance/2, -X_rods_distance/2, thickness + lm8uu_holder_rod_height + X_rod_height])
       rotate([180,0,0])
       rotate([0,0,90])
-      ybushing();
+      lm8uu_holder();
     }
   }
 }
@@ -1812,12 +1812,12 @@ module Xbelt(){
 module belt_clamps(){
   if (preview_ABS){
     color(ABS_color){
-      translate([XCarPosition - XCarriage_lm8uu_distance/2-10,  XPlatform_width/2 + XEnd_extra_width - belt_offset + belt_width/2, belt_clamp_height + 2*thickness + X_rod_height + y_bushing_rod_height])
+      translate([XCarPosition - XCarriage_lm8uu_distance/2-10,  XPlatform_width/2 + XEnd_extra_width - belt_offset + belt_width/2, belt_clamp_height + 2*thickness + X_rod_height + lm8uu_holder_rod_height])
       rotate([0,0,90])
       rotate([180,0,0])
       beltclamp();
 
-      translate([XCarPosition + XCarriage_lm8uu_distance/2+10,  XPlatform_width/2 + XEnd_extra_width - belt_offset + belt_width/2, belt_clamp_height + 2*thickness + X_rod_height + y_bushing_rod_height])
+      translate([XCarPosition + XCarriage_lm8uu_distance/2+10,  XPlatform_width/2 + XEnd_extra_width - belt_offset + belt_width/2, belt_clamp_height + 2*thickness + X_rod_height + lm8uu_holder_rod_height])
       rotate([0,0,90])
       rotate([180,0,0])
       beltclamp();
@@ -1828,7 +1828,7 @@ module belt_clamps(){
 module XEndMotor_linear_bearings(){
   if (preview_metal){
     color(metal_color){
-	    translate([thickness + y_bushing_rod_height, 0, -12]){
+	    translate([thickness + lm8uu_holder_rod_height, 0, -12]){
       	cylinder(r=8, h=24);
       	translate([0, 0, XPlatform_height])
       	cylinder(r=8, h=24);
@@ -1840,7 +1840,7 @@ module XEndMotor_linear_bearings(){
 module XEndIdler_linear_bearings(){
   if (preview_metal){
     color(metal_color){
-      translate([- thickness - y_bushing_rod_height, 0, -12]){
+      translate([- thickness - lm8uu_holder_rod_height, 0, -12]){
       	cylinder(r=8, h=24);
       	translate([0, 0, XPlatform_height])
       	cylinder(r=8, h=24);
@@ -1885,14 +1885,14 @@ module ZLink(){
 }
 
 module XEndMotor_ZLink(){
-  translate([thickness + y_bushing_rod_height + ZLink_rod_height + z_rod_z_bar_distance, 0, thickness + (XPlatform_height-thickness)/2])
+  translate([thickness + lm8uu_holder_rod_height + ZLink_rod_height + z_rod_z_bar_distance, 0, thickness + (XPlatform_height-thickness)/2])
   rotate([0,0,-90])
   rotate([90,0,0])
   ZLink();
 }
 
 module XEndIdler_ZLink(){
-  translate([-thickness - y_bushing_rod_height - ZLink_rod_height - z_rod_z_bar_distance, 0, thickness + (XPlatform_height-thickness)/2])
+  translate([-thickness - lm8uu_holder_rod_height - ZLink_rod_height - z_rod_z_bar_distance, 0, thickness + (XPlatform_height-thickness)/2])
   rotate([0,0,90])
   rotate([90,0,0])
   ZLink();
@@ -1929,10 +1929,10 @@ module YRods(){
 module ZRods(){
   if (preview_metal){
     color(metal_color){
-      translate([-machine_x_dim/2 + thickness + y_bushing_rod_height, 0, BottomPanel_zoffset])
+      translate([-machine_x_dim/2 + thickness + lm8uu_holder_rod_height, 0, BottomPanel_zoffset])
       cylinder(r=8/2, h=Z_rod_length);
 
-      translate([machine_x_dim/2 - thickness - y_bushing_rod_height, 0,  BottomPanel_zoffset])
+      translate([machine_x_dim/2 - thickness - lm8uu_holder_rod_height, 0,  BottomPanel_zoffset])
       cylinder(r=8/2, h=Z_rod_length);
     }
   }
@@ -1941,10 +1941,10 @@ module ZRods(){
 module ZBars(){
   if (preview_threaded_metal){
     color(threaded_metal_color){
-      translate([-machine_x_dim/2 + thickness + y_bushing_rod_height + z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
+      translate([-machine_x_dim/2 + thickness + lm8uu_holder_rod_height + z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
       cylinder(r=m8_diameter/2, h=Z_bar_length);
 
-      translate([machine_x_dim/2 - thickness - y_bushing_rod_height - z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
+      translate([machine_x_dim/2 - thickness - lm8uu_holder_rod_height - z_rod_z_bar_distance, 0, BottomPanel_zoffset + motor_shaft_length])
       cylinder(r=m8_diameter/2, h=Z_bar_length);
     }
   }
@@ -1963,13 +1963,13 @@ module wade_block(){
 }
 
 module WadeExtruder(){
-  translate([XCarPosition, 0, 2*thickness + X_rod_height + y_bushing_rod_height])
+  translate([XCarPosition, 0, 2*thickness + X_rod_height + lm8uu_holder_rod_height])
   wade_block();
 }
 
 module XCarriage(){
   //lasercut parts:
-  translate([XCarPosition, 0, thickness + X_rod_height + y_bushing_rod_height]){
+  translate([XCarPosition, 0, thickness + X_rod_height + lm8uu_holder_rod_height]){
     XCarriage_bottom_sheet();
 
 //    translate([0,0,thickness])
@@ -2499,7 +2499,7 @@ module RearAssembly(){
 }
 
 module J_head(){
-  translate([XCarPosition, 0, 2*thickness + X_rod_height + y_bushing_rod_height]){
+  translate([XCarPosition, 0, 2*thickness + X_rod_height + lm8uu_holder_rod_height]){
 
     if (preview_peek){
       color(peek_color){
