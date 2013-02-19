@@ -7,7 +7,6 @@
 // http://www.thingiverse.com/thing:6713
 
 include<configuration.scad>
-include<jonaskuehling-default.scad>
 longer_support=5;
 
 // Define the hotend_mounting style you want by specifying hotend_mount=style1+style2 etc.
@@ -34,6 +33,12 @@ extra_gear_separation=2;
 // Nut wrench sizes ISO 4032
 m3_wrench = 5.5;
 m4_wrench = 7;
+
+module nut_trap(nut_wrench_size, trap_height, vertical=true, clearance=0.2){
+  cornerdiameter =  (((nut_wrench_size)/2) + clearance) / cos(180/6);
+  rotate([0,vertical*90,0])
+  cylinder(h = trap_height, r = cornerdiameter, center=true, $fn = 6);
+}
 
 // Adjust for deeper groove in hobbed bolt, so that idler is still vertical when tightened
 // Values like 0.5 to 1 should work, the more, the closer the idler will move to the bolt
