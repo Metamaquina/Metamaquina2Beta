@@ -4,7 +4,7 @@ Metamaquina2Beta
 
 Metamaquina 2 - fully parametric 3D printer (Beta version)
 
-[![A photo of the Metamaquina2Beta 3d printer](http://metamaquina.com.br/site/wp-content/themes/ifeaturepro/includes/landing-page/img/header.jpg)]
+![A photo of the Metamaquina2Beta 3d printer](http://metamaquina.com.br/site/wp-content/themes/ifeaturepro/includes/landing-page/img/header.jpg)
 
 Manufacturing Instructions
 ==========================
@@ -22,7 +22,7 @@ plan to work with some other materials).
 The complete 3D model of the machine is described by the Metamaquina2Beta.scad file. Open is in 
 OpenSCAD and press F5 to render it.
 
-[![An OpenSCAD rendering of the Metamaquina2Beta 3d printer](https://github.com/Metamaquina/Metamaquina2Beta/master/img/MM2Beta.png)]
+![An OpenSCAD rendering of the Metamaquina2Beta 3d printer](https://raw.github.com/Metamaquina/Metamaquina2Beta/master/img/MM2Beta.png)
 
 Hacking the code
 ================
